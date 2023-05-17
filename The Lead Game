@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int i,n;
+    cin>>n;
+    int arr1[n],arr2[n],arr3[n],arr4[n],arr5[n];
+    for(i=0;i<n;++i)
+    {
+        cin>>arr1[i]>>arr2[i];
+    }
+    
+    int sum1=0;
+    int sum2=0;
+    
+    for(i=0;i<n;++i)
+    {
+        sum1=sum1+arr1[i];
+        arr3[i]=sum1;
+        
+        sum2=sum2+arr2[i];
+        arr4[i]=sum2;
+        
+        arr5[i]=abs(arr3[i]-arr4[i]);
+    }
+    
+    int temp=0,win;
+    for(i=0;i<n;i++)
+    {
+        if(temp<arr5[i])
+        {
+            temp=arr5[i];
+        }
+        
+        if (temp==arr5[i])
+        {
+            if(arr1[i]>arr2[i])
+            {
+                win=1;
+            }
+            else
+            {
+                win=2;
+            }
+        }
+    }
+    cout<<temp<<" "<<win<<endl;
+}
